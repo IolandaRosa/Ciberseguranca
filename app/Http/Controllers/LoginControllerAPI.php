@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Response;
 use App\User;
 
-define('YOUR_SERVER_URL', 'http://projet.dad');
+define('YOUR_SERVER_URL', 'https://projetociberseguranca.azurewebsites.net');
 // Check "oauth_clients" table for next 2 values:
 define('CLIENT_ID', '2');
-define('CLIENT_SECRET','oOE2JbBlAUkRI9AkYnOUyAa3GWdY3Ad7fkfk64rU');
+define('CLIENT_SECRET','HriWHKJ2UnraerOaV7sF80EyRdSSN8bMXn83Mh2R');
 
 class LoginControllerAPI extends Controller
 {
