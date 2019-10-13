@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Response;
 use App\User;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 define('YOUR_SERVER_URL', 'https://projetociberseguranca.azurewebsites.net');
 // Check "oauth_clients" table for next 2 values:
@@ -13,6 +15,18 @@ define('CLIENT_SECRET','HriWHKJ2UnraerOaV7sF80EyRdSSN8bMXn83Mh2R');
 
 class LoginControllerAPI extends Controller
 {
+	public function unauthorizedAccess(Request $request){
+
+		if($request->logFile != null) {
+            $file = $request->file('logFile');
+            $path = basename($file->store('logs', 'public'));
+            return response()->json(['msg'=>'File stored with sucess'], 200);
+        }
+        else{
+        	response()->json(['msg'=>'No file'], 400);
+        }
+
+	}
 
 	public function login(Request $request)
 	{
