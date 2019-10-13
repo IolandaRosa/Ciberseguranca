@@ -19,6 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('items', 'ItemControllerAPI@index');
 
+//Rota acrescentada para smartphone enviar erro de login
+Route::post('unauthorizedAccess','LoginControllerAPI@unauthorizedAccess')->name('unauthorizedAccess');
+
+
 Route::post('login', 'LoginControllerAPI@login')->name('login');
 Route::post('loginUsername', 'LoginControllerAPI@loginUsername')->name('loginUsername');
 Route::middleware('auth:api')->post('logout', 'LoginControllerAPI@logout');
