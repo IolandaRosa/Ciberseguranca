@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Response;
 use App\User;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Illuminate\Http\File;
 
 define('YOUR_SERVER_URL', 'https://projetociberseguranca.azurewebsites.net');
 // Check "oauth_clients" table for next 2 values:
@@ -19,7 +19,11 @@ class LoginControllerAPI extends Controller
 
 		if($request->logFile != null) {
             $file = $request->file('logFile');
-            $path = basename($file->store('logs', 'public'));
+            // Manually specify a file name...
+			Storage::putFileAs('public/logs',$file, 'file.txt');
+
+            //$path = basename($file->store('logs', 'public'));
+            
             return response()->json(['msg'=>'File stored with sucess'], 200);
         }
         else{
