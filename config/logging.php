@@ -36,7 +36,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['daily','my-channel'],
         ],
 
         'single' => [
@@ -81,6 +81,10 @@ return [
         'syslog' => [
             'driver' => 'syslog',
             'level' => 'debug',
+        ],
+        'my-channel' => [
+            'driver' => 'single',
+            'level' => 'warning',
         ],
 
         'errorlog' => [
