@@ -1,7 +1,7 @@
 # Instalation
 
 ```bash
-composer installd
+composer install
 php artisan config:cache # Maybe optional
 php artisan migrate # Create database tables
 php artisan db:seed # Populate the database
