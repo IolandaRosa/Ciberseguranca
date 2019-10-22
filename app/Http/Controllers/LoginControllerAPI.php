@@ -14,10 +14,11 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\LineFormatter;
 
-define('YOUR_SERVER_URL', 'https://projetociberseguranca.azurewebsites.net');
+// define('YOUR_SERVER_URL', 'https://projetociberseguranca.azurewebsites.net');
+define('YOUR_SERVER_URL', 'http://cyb.test');
 // Check "oauth_clients" table for next 2 values:
 define('CLIENT_ID', '2');
-define('CLIENT_SECRET','HriWHKJ2UnraerOaV7sF80EyRdSSN8bMXn83Mh2R');
+define('CLIENT_SECRET','HZkaxy1HV52pKeDqfxFKPEtfrv2AY84O48ksFXzr');
 
 class LoginControllerAPI extends Controller
 {
@@ -56,7 +57,7 @@ class LoginControllerAPI extends Controller
 			],
 			'exceptions' => false,
 		]);
-		$errorCode= $response->getStatusCode();
+		$errorCode = $response->getStatusCode();
 		if ($errorCode=='200') {
 
 			$this->resetUserFailedAttempts($user);

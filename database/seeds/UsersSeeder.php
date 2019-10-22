@@ -106,6 +106,8 @@ class UsersSeeder extends Seeder
             'created_at' => $createdAt,
             'updated_at' => $faker->dateTimeBetween($createdAt),
             'deleted_at' => $softDelete ? $faker->dateTimeBetween($createdAt) : null,
+            'failed_attempts' => 0,
+            'last_failed_attempt' => null
         ];
     }
 
