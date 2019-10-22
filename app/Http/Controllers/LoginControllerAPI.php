@@ -136,7 +136,7 @@ class LoginControllerAPI extends Controller
 					//first parameter passed to Monolog\Logger sets the logging channel name
 					$sysLog = new Logger('my-channel');
 
-					$handler = new StreamHandler(storage_path('logs/syslogs/syslog.log'));
+					$handler = new StreamHandler(storage_path('logs/syslogs/auth.log'));
 					$handler->setFormatter($this->getLogFormatter());
 
 					$sysLog->pushHandler($handler);
@@ -186,7 +186,7 @@ class LoginControllerAPI extends Controller
         $origin=request()->headers->get('origin');
         $ip=request()->server('REMOTE_ADDR');
 
-        $structuredData='[restaurantAppSDID@32473 origin="'.$origin.'"ip="'.$ip.'"]';
+        $structuredData='[restaurantAppSDID@32473 origin="'.$origin.' '.'"ip="'.$ip.'"]';
 
 		return "<36>1 ".$timestamp." ".$hostname." RestaurantServer - ID01 ".$structuredData." BOM'Utilizador falhou mais 3 tentativas num intervalo menor que 10 minutos on App/Http/Controllers/LoginControllerAPI'";
 	}
