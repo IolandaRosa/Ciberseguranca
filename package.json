@@ -24,7 +24,7 @@
         "install": "^0.12.2",
         "vue-chartjs": "^3.4.0",
         "vue-good-table": "^2.16.0",
-        "vue-moment": "^4.0.0",
+        "vue-moment": "^4.1.0",
         "vue-morris": "0.0.13",
         "vue-router": "^3.0.1",
         "vue-socket.io": "^3.0.4",
